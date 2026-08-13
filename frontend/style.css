@@ -1,1 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff5f8;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
 
+header {
+    background-color: #ff85a2;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.grid-cupcakes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card-cupcake {
+    background: white;
+    border: 1px solid #ffd1dc;
+    border-radius: 8px;
+    padding: 15px;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.card-cupcake img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.preco {
+    font-weight: bold;
+    color: #d81b60;
+}
+
+button {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #f50057;
+}
+
+#mensagem-status {
+    margin-top: 10px;
+    font-weight: bold;
+}
