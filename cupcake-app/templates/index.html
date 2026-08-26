@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cupcakes Gourmet</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #fcfcfc; }
+        .vitrine { display: flex; gap: 20px; }
+        .cupcake-card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; background: #fff; }
+        button { background-color: #ff6b81; color: white; border: none; padding: 10px; cursor: pointer; border-radius: 5px; }
+        #carrinho { margin-top: 30px; border-top: 2px solid #ccc; padding-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Vitrine de Cupcakes Gourmet</h1>
+    
+    <div class="vitrine">
+        <!-- O Jinja2 do Python vai preencher estes dados -->
+        {% for cupcake in cupcakes %}
+        <div class="cupcake-card">
+            <h3>{{ cupcake[1] }}</h3>
+            <p>{{ cupcake[2] }}</p>
+            <p><strong>R$ {{ "%.2f"|format(cupcake[3]) }}</strong></p>
+            <button onclick="adicionarAoCarrinho('{{ cupcake[1] }}', {{ cupcake[3] }})">Comprar</button>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div id="carrinho">
+        <h2>Seu Carrinho</h2>
+        <ul id="lista-carrinho"></ul>
+        <p>Total: R$ <span id="total-carrinho">0.00</span></p>
+    </div>
+
+    <script>
+        // Lógica simples de Front-end (JavaScript)
+        let total = 0;
+        function adicionarAoCarrinho(nome, preco) {
+            const lista = document.getElementById('lista-carrinho');
+            const item = document.createElement('li');
+            item.innerText = nome + " - R$ " + preco.toFixed(2);
+            lista.appendChild(item);
+            
+            total += preco;
+            document.getElementById('total-carrinho').innerText = total.toFixed(2);
+            alert(nome + " adicionado ao carrinho!"); // Feedback imediato ao usuário
+        }
+    </script>
+</body>
+</html>
